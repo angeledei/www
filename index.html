@@ -1,7 +1,39 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <h1>
-Olá Mundo!!!
-    </h1>
-  </body>
+<body>
+
+<h2>Angele Dei Consulting</h2>
+
+<p id="demo"></p>
+
+<script>
+// Obtém a URL atual
+var url_string = window.location.href;
+
+// Cria um objeto URL
+var url = new URL(url_string);
+
+// Usa URLSearchParams para pegar o parâmetro 'url'
+var param_url = url.searchParams.get("url");
+
+// Verifica se o parâmetro 'url' existe
+if (param_url) {
+    // Cria um elemento de âncora
+    var a = document.createElement('a');
+
+    // Define o href do elemento âncora para o parâmetro 'url'
+    a.href = param_url;
+
+    // Define o texto do link para o parâmetro 'url'
+    a.textContent = "click aqui";
+	a.download = "file.xml";
+
+    // Adiciona o elemento âncora ao corpo do documento
+    document.body.appendChild(a);
+} else {
+    document.body.textContent = "Olá Mundo!!!.";
+}
+</script>
+
+</body>
 </html>
